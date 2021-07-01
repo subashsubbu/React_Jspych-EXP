@@ -10,4 +10,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Errors are currently displayed at console with related to plugins. E.g.
   - No plugin loaded for trials of type "[object Object]"( this appears after npm start)
-  - TypeError: undefined is not an object (evaluating 'a.plugins[e.type].info') ( this appears after you press any key in       second step)
+  - TypeError: undefined is not an object (evaluating 'a.plugins[e.type].info') ( this appears after you press any key in second step)
