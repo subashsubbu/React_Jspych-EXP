@@ -1,45 +1,28 @@
 import { jsPsych } from 'jspsych-react'
-import callbackImageKeyboardResponsePlugin from "./callbackImageKeyboardResponsePlugin.js";
+//import callbackImageKeyboardResponsePlugin from "./callbackImageKeyboardResponsePlugin.js"
 
-// Helper function
-// function getRandomInt(min, max) {
-//   min = Math.ceil(min);
-//   max = Math.floor(max);
-//   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-// }
 
 const post_trial_gap = function () {
   return Math.floor(Math.random() * jitter) + iti;
 };
-
-
-// Experiment parameters
 const stim_duration = 200;
 const iti = 300;
 const jitter = 200;
-const plugin_name = callbackImageKeyboardResponsePlugin;
+//const plugin_name = callbackImageKeyboardResponsePlugin;
 
 export function timelineFactory(callback) {
-
   const start_callback = function () {
     callback('start')
   };
   const stop_callback = function () {
     callback('stop')
   };
-
-  // jspsych is in the node_modules
-  // const base_path = '/src/images/';
-  let targets = [
-
-  ];
-
+  let targets = [];
   var imageNumber;
   var fileName;
   var toPush;
   for (var i = 0; i < 10; i++) {
     imageNumber = Math.floor(Math.random() * (901 - 1) + 1);
-
     if (imageNumber <= 9) {
       fileName = "static/00000" + imageNumber + ".jpg";
       toPush = { 'stimulus': fileName };
@@ -57,10 +40,8 @@ export function timelineFactory(callback) {
     }
     targets.push(toPush);
   }
-
   // Create timeline
   const timeline = [];
-
   const welcome_block = {
     type: 'callbackImageKeyboardResponsePlugin',
     stimulus: "In this exercise, you will be shown a series of quickly moving pictures. In between each picture, you will see a <strong>+</strong>. Please focus on this when there is not an image on the screen. This exercise contains imagery that some may find disturbing. User beware. Press any key to begin.",
@@ -68,10 +49,10 @@ export function timelineFactory(callback) {
     on_start: start_callback
   };
   timeline.push(welcome_block);
-
+  
   const test_trials = {
     stimulus: 'stimulus',
-    type: plugin_name,
+    type: 'callbackImageKeyboardResponsePlugin',
     timeline: targets,
     trial_duration: function () {
       return jsPsych.randomization.sampleWithoutReplacement([250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750], 1)[0];
@@ -81,20 +62,8 @@ export function timelineFactory(callback) {
     on_start: function () {
       console.log(this)
     }
-
   };
-
   timeline.push(test_trials);
-
-  // const fixation = {
-  //   type: "callbackImageDisplay",
-  //   stimulus: "./images/fixation.png",
-  //   stimulus_duration: stim_duration,
-  //   trial_duration: () => params.iti + Math.random() * params.jitter,
-  //   post_trial_gap: post_trial_gap(),
-
-  // }
-  // timeline.push(fixation);
 
   const end_block = {
     type: 'callbackImageKeyboardResponsePlugin',
@@ -102,11 +71,8 @@ export function timelineFactory(callback) {
     post_trial_gap: 500,
     on_start: stop_callback
   };
-
   timeline.push(end_block);
-
   return timeline;
-
 }
 
 

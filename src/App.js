@@ -11,8 +11,8 @@ function App() {
     return (
         <div>
             <Experiment
-                settings={{ timeline }}
-                plugins={{ callbackImageKeyboardResponsePlugin }}
+                settings={{ timeline: timeline }}
+                plugins={{ callbackImageKeyboardResponsePlugin: callbackImageKeyboardResponsePlugin }}
             />
 
         </div>
