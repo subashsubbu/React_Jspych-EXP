@@ -1,0 +1,404 @@
+/**
+ * Global styles
+ */
+
+ body {
+	margin: 0;
+	background-color: #ffffff;
+	height: 100vh;
+	font-size: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+	  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+	  "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+      }
+      
+      .main-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-wrap: wrap;
+      }
+      
+      select {
+	padding: 10px;
+	font-size: 16px;
+      }
+      
+      .unstyled-link,
+      .unstyled-link:visited {
+	text-decoration: none;
+	color: inherit;
+      }
+      
+      /**
+       * components/LoginForm.js
+       */
+      
+      .login-form {
+	display: flex;
+	flex-direction: column;
+      }
+      
+      .login-form .row {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: column;
+      }
+      
+      .login-form label {
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 5px;
+      }
+      
+      .login-form input {
+	width: 100%;
+	padding: 12px 10px;
+	font-size: 14px;
+	border: 0;
+	border-radius: 5px;
+	box-sizing: border-box;
+	background-color: #e6ecef;
+	font-family: monospace;
+      }
+      
+      /**
+       * card
+       */
+      
+      .card {
+	background: lightgray;
+	color: rgb(147, 147, 147);
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 200px;
+	min-height: 150px;
+	padding: 10px 20px;
+	border-radius: 8px;
+	margin: 20px;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1;
+      }
+      
+      .card-heading {
+	margin: 0 0 20px 0;
+	color: #666666;
+      }
+      
+      .card-btn {
+	background: rgb(113, 211, 211);
+	color: #000c14;
+	border: none;
+	padding: 8px 20px;
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: inherit;
+	margin-top: 16px;
+	cursor: pointer;
+      }
+      
+      .card-link {
+	font-size: 17px;
+	color: darkslategray;
+	text-decoration: none;
+      }
+      
+      .card-footer {
+	color: darkslategray;
+	margin-top: 20px;
+	text-align: center;
+      }
+      
+      .card-footer-cta {
+	display: block;
+	align-self: center;
+      }
+      
+      .card-footer-credits {
+	font-size: 10px;
+	margin-top: 10px;
+      }
+      
+      .card-footer-credits .card-link {
+	font-size: inherit;
+      }
+      
+      .card-error {
+	color: cadetblue;
+	margin: 0 0 12px 0;
+      }
+      
+      /**
+       * components/Status.js
+       */
+      
+      .status-indicator {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	font-size: 0;
+	margin: 0 17px 2px 6px;
+	display: inline-block;
+      }
+      
+      .status-item {
+	margin-bottom: 8px;
+	padding-top: 8px;
+	border-top: 2px solid rgba(0, 0, 0, 0.1);
+	font-weight: bold;
+      }
+      
+      .status-heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+      }
+      
+      /**
+       * components/Loading.js
+       */
+      
+      .loading-container {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+      }
+      
+      .loading-spinner {
+	border-radius: 50%;
+	border: 8px solid rgba(113, 211, 211, 0.5);
+	border-top: 8px solid rgb(113, 211, 211);
+	height: 40px;
+	width: 40px;
+	animation: spin 2s linear infinite;
+      }
+      
+      @keyframes spin {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+      }
+      
+
+/*
+ * CSS for jsPsych experiments.
+ *
+ * This stylesheet provides minimal styling to make jsPsych
+ * experiments look polished without any additional styles.
+ */
+
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+/* Container holding jsPsych content */
+
+ .jspsych-display-element {
+   display: flex;
+   flex-direction: column;
+   overflow-y: auto;
+ }
+
+ .jspsych-display-element:focus {
+   outline: none;
+ }
+
+ .jspsych-content-wrapper {
+   display: flex;
+   margin: auto;
+   flex: 1 1 100%;
+   width: 100%;
+   margin-top: 10%;
+ }
+
+ .jspsych-content {
+   max-width: 95%; /* this is mainly an IE 10-11 fix */
+   text-align: center;
+   margin: auto; /* this is for overflowing content */
+ }
+
+ .jspsych-top {
+   align-items: flex-start;
+ }
+
+ .jspsych-middle {
+   align-items: center;
+ }
+
+/* fonts and type */
+
+.jspsych-display-element {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+/* Form elements like input fields and buttons */
+
+.jspsych-display-element input[type="text"] {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 14px;
+}
+
+/* borrowing Bootstrap style for btn elements, but combining styles a bit */
+.jspsych-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  cursor: pointer;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+/* only apply the hover style on devices with a mouse/pointer that can hover - issue #977 */
+@media (hover: hover) {
+  .jspsych-btn:hover {
+    background-color: #ddd;
+    border-color: #aaa;
+  }
+}
+
+.jspsych-btn:active {
+  background-color: #ddd;
+  border-color:#000000;
+}
+
+.jspsych-btn:disabled {
+  background-color: #eee;
+  color: #aaa;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* custom style for input[type="range] (slider) to improve alignment between positions and labels */
+
+.jspsych-slider {
+  appearance: none;
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  width: 100%; 
+  background: transparent; 
+}
+.jspsych-slider:focus {
+  outline: none;
+}
+/* track */
+.jspsych-slider::-webkit-slider-runnable-track {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #eee;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border-radius: 2px;
+  border: 1px solid #aaa;
+}
+.jspsych-slider::-moz-range-track {
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #eee;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border-radius: 2px;
+  border: 1px solid #aaa;
+}
+.jspsych-slider::-ms-track {
+  appearance: none;
+  width: 99%;
+  height: 14px;
+  cursor: pointer;
+  background: #eee;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border-radius: 2px;
+  border: 1px solid #aaa;
+}
+/* thumb */
+.jspsych-slider::-webkit-slider-thumb {
+  border: 1px solid #666;
+  height: 24px;
+  width: 15px;
+  border-radius: 5px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -9px;
+}
+.jspsych-slider::-moz-range-thumb {
+  border: 1px solid #666;
+  height: 24px;
+  width: 15px;
+  border-radius: 5px;
+  background: #ffffff;
+  cursor: pointer;
+}
+.jspsych-slider::-ms-thumb {
+  border: 1px solid #666;
+  height: 20px;
+  width: 15px;
+  border-radius: 5px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -2px;
+}
+
+/* jsPsych progress bar */
+
+#jspsych-progressbar-container {
+  color: #555;
+  border-bottom: 1px solid #dedede;
+  background-color: #f9f9f9;
+  margin-bottom: 1em;
+  text-align: center;
+  padding: 8px 0px;
+  width: 100%;
+  line-height: 1em;
+}
+#jspsych-progressbar-container span {
+  font-size: 14px;
+  padding-right: 14px;
+}
+#jspsych-progressbar-outer {
+  background-color: #eee;
+  width: 50%;
+  margin: auto;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+#jspsych-progressbar-inner {
+  background-color: #aaa;
+  width: 0%;
+  height: 100%;
+}
+
+/* Control appearance of jsPsych.data.displayData() */
+#jspsych-data-display {
+  text-align: left;
+}
+
