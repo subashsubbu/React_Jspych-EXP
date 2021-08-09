@@ -1,9 +1,9 @@
 import React from 'react'
 import { Experiment } from 'jspsych-react';
 import { timelineFactory } from './timeline';
-import callbackImageDisplay from './callbackImageKeyboardResponsePlugin';
-import callbackHTMLDisplay from './callback_html_keyboard_response';
-
+// import { callbackHTMLDisplay, callbackImageDisplay } from "./plugins";
+import callbackHTMLDisplay from './plugins/callbackHTMLDisplay';
+import callbackImageDisplay from './plugins/callbackImageDisplay';
 
 
 function App() {
@@ -13,7 +13,10 @@ function App() {
         <div>
             <Experiment
                 settings={{ timeline: timeline }}
-                plugins={{ callbackImageDisplay: callbackImageDisplay, callbackHTMLDisplay: callbackHTMLDisplay }}
+                plugins={{
+                    "callbackHTMLDisplay": callbackHTMLDisplay,
+                    "callbackImageDisplay": callbackImageDisplay
+                }}
             />
 
         </div>
